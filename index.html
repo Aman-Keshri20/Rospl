@@ -6,17 +6,20 @@
     <title>Password Manager</title>
     <link rel="stylesheet" href="styles.css">
     <link href="script.js">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
 </head>
 <body>
     <div class="container">
+        <image src="./images/main.png" className="main"></image>
         <h1>Password Manager</h1>
-        <button id="store-password" class="btn">Store Password</button>
-        <button id="retrieve-password" class="btn">Retrieve Password</button>
-        <button id="generate-password" class="btn">Generate Password</button>
-        <button id="list-services" class="btn">List Services</button>
-        <button id="delete-services" class="btn">Delete Service</button>
-        <button id="upload-drive" class="btn">Upload to Drive</button>
-        <button id="download-drive" class="btn">Download from Drive</button>
+        <button id="store-password" class="btn"><image src="./images/store.png"></image>Store Password</button>
+        <button id="retrieve-password" class="btn"><image src="./images/retrieve.png"></image>Retrieve Password</button>
+        <button id="generate-password" class="btn"><image src="./images/generate.png"></image>Generate Password</button>
+        <button id="list-services" class="btn"><image src="./images/list.png"></image>List Services</button>
+        <button id="delete-services" class="btn"><image src="./images/delete.png"></image>Delete Service</button>
+        <button id="autofill-passwords" class="btn">Autofill Passwords</button>
+        <button id="upload-drive" class="btn"><image src="./images/db_upload.png"></image>Upload to Drive</button>
+        <button id="download-drive" class="btn"><image src="./images/db_download.png"></image>Download from Drive</button>
     </div>
     <div id="password-inputs" style="display: none;">
         <input type="email" id="service-email" placeholder="Enter email" class="input-field"> 
@@ -30,13 +33,35 @@
         <button id="copy-button">Copy Password</button>
         <button id="close-popup">Close</button>
     </div>
+    <div id="upload-success-popup" class="popup" style="display:none;">
+        <div class="popup-content">
+            <span id="close-upload-popup" class="close">&times;</span>
+            <h2>Upload Successful!</h2>
+            <p>Your passwords have been successfully uploaded to Google Drive.</p>
+            <button id="ok-upload-popup">OK</button>
+        </div>
+    </div>
+    <div id="download-popup" class="popup-modal">
+        <div class="popup-content">
+            <span class="close-popup" id="close-download-popup">&times;</span>
+            <p id="download-popup-message">Starting download...</p>
+            <button id="ok-download-popup">OK</button>
+        </div>
+    </div>
     
-    <script src="background.js"></script>
-    <script src="upload.js"></script>
+    
     <script src="generate.js"></script>
     <script src="storepass.js"></script>
     <script src="retrievepass.js"></script>
     <script src="listservice.js"></script>
     <script src="delservice.js"></script>
+    <script src="background.js"></script>
+    <script src="content.js"></script>
+    <script src="popup.js"></script>
+    <script src="upload.js"></script>
+    <script src="download.js"></script>
+    <div id="download-status"></div>
+
+    
 </body>
 </html>
