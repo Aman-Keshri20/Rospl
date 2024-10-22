@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="script.js">
+</head>
+<body>
+    <div class="container">
+        <h1>Password Manager</h1>
+        <button id="store-password" class="btn">Store Password</button>
+        <button id="retrieve-password" class="btn">Retrieve Password</button>
+        <button id="generate-password" class="btn">Generate Password</button>
+        <button id="list-services" class="btn">List Services</button>
+        <button id="delete-services" class="btn">Delete Service</button>
+        <button id="upload-drive" class="btn">Upload to Drive</button>
+        <button id="download-drive" class="btn">Download from Drive</button>
+    </div>
+    <div id="password-inputs" style="display: none;">
+        <input type="email" id="service-email" placeholder="Enter email" class="input-field"> 
+        <input type="text" id="service-name" placeholder="Enter service name" class="input-field">
+        <input type="password" id="service-password" placeholder="Enter password" class="input-field">
+        
+        <button class="btn" id="submit-password">Submit Password</button>
+    </div>
+    <div id="popup" class="popup" style="display: none;">
+        <p>Your generated password is: <span id="generated-password"></span></p>
+        <button id="copy-button">Copy Password</button>
+        <button id="close-popup">Close</button>
+    </div>
+    
+    <script src="background.js"></script>
+    <script src="upload.js"></script>
+    <script src="generate.js"></script>
+    <script src="storepass.js"></script>
+    <script src="retrievepass.js"></script>
+    <script src="listservice.js"></script>
+    <script src="delservice.js"></script>
+</body>
+</html>

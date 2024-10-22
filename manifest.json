@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+  "name": "Password Manager Extension",
+  "version": "1.0",
+  "description": "A password manager extension to store, retrieve, and manage passwords.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "identity" 
+  ],
+
+  "oauth2": {
+    "client_id": "36205015864-cd47o5qg1jg7ft3o2nin3am1ec2iiq1l.apps.googleusercontent.com",
+    "scopes": [
+        "https://www.googleapis.com/auth/drive.file"
+    ]
+},
+"background": {
+    "service_worker": "background.js"  
+},
+"action": {
+    "default_popup": "index.html"
+},
+
+"content_security_policy": {
+  "extension_pages": "script-src 'self'; object-src 'self'; connect-src https://www.googleapis.com"
+}
+  
+}
+  
